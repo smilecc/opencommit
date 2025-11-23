@@ -1,7 +1,7 @@
 {
-  "name": "opencommit",
-  "version": "3.2.10",
-  "description": "Auto-generate impressive commits in 1 second. Killing lame commits with AI 🤯🔫",
+  "name": "opencommit-cn",
+  "version": "3.2.10-rc1",
+  "description": "利用 AI 自动生成 Git 提交信息（简中强化）",
   "keywords": [
     "git",
     "chatgpt",
@@ -21,10 +21,10 @@
     "oco": "out/cli.cjs"
   },
   "repository": {
-    "url": "git+https://github.com/di-sukharev/opencommit.git"
+    "url": "git+https://github.com/smilecc/opencommit.git"
   },
   "type": "module",
-  "author": "https://github.com/di-sukharev",
+  "author": "https://github.com/smilecc",
   "license": "MIT",
   "files": [
     "out/cli.cjs",
