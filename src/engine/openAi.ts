@@ -55,6 +55,8 @@ export class OpenAiEngine implements AiEngine {
       )
         throw new Error(GenerateCommitMessageErrorEnum.tooMuchTokens);
 
+      // console.log('openai request params', JSON.stringify(params, null, 2));
+
       const completion = await this.client.chat.completions.create(params);
 
       const message = completion.choices[0].message;

@@ -102,7 +102,7 @@ const getCommitConvention = (fullGitMojiSpec: boolean) =>
 
 const getDescriptionInstruction = () =>
   config.OCO_DESCRIPTION
-    ? '在提交信息后简要描述**为什么**要进行更改。不要以 "This commit" 开头，直接描述变更内容。'
+    ? '在提交信息后隔一行简要**描述变更内容**。不要以 "This commit" 开头，直接描述变更内容。'
     : '不要向提交添加任何描述，仅保留提交信息。';
 
 const getOneLineCommitInstruction = () =>
@@ -139,14 +139,14 @@ const INIT_MAIN_PROMPT = (
     const commitConvention = fullGitMojiSpec
       ? 'GitMoji 规范'
       : 'Conventional Commit 约定';
-    const missionStatement = `${IDENTITY} 你的任务是根据 ${commitConvention} 创建清晰且全面的提交信息，并解释**做了什么**更改，主要是**为什么**要进行这些更改。`;
+    const missionStatement = `${IDENTITY} 你的任务是根据 ${commitConvention} 创建清晰且全面的提交信息，并按小点（1. 2. 等，**不得**超过5个小点，若只有1个小点则直接描述变更内容）描述变更内容：解释**做了什么**更改，以及**为什么**要进行这些更改。`;
     const diffInstruction =
       "我将发送 'git diff --staged' 命令的输出给你，你需要将其转换为提交信息。";
     const conventionGuidelines = getCommitConvention(fullGitMojiSpec);
     const descriptionGuideline = getDescriptionInstruction();
     const oneLineCommitGuideline = getOneLineCommitInstruction();
     const scopeInstruction = getScopeInstruction();
-    const generalGuidelines = `使用一般现在时。每行不得超过 74 个字符。必需使用 ${language} 编写提交信息。`;
+    const generalGuidelines = `每行**不得**超过 60 个字符。重点注意：你**必需使用 ${language} 编写提交消息（commit message）**。`;
     const userInputContext = userInputCodeContext(context);
 
     return `${missionStatement}\n${diffInstruction}\n${conventionGuidelines}\n${descriptionGuideline}\n${oneLineCommitGuideline}\n${scopeInstruction}\n${generalGuidelines}\n${userInputContext}`;

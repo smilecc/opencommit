@@ -1,8 +1,8 @@
 {
   "localLanguage": "简体中文",
-  "commitFix": "fix(server.ts)：将端口变量从小写port改为大写PORT",
-  "commitFeat": "feat(server.ts)：添加对process.env.PORT环境变量的支持",
-  "commitDescription": "现在端口变量被命名为PORT，这提高了命名约定的一致性，因为PORT是一个常量。环境变量的支持使应用程序更加灵活，因为它现在可以通过process.env.PORT环境变量在任何可用端口上运行。",
-  "commitFixOmitScope": "fix：将端口变量从小写port改为大写PORT",
-  "commitFeatOmitScope": "feat：添加对process.env.PORT环境变量的支持"
+  "commitFix": "fix(server.ts): 将端口变量从小写port改为大写PORT",
+  "commitFeat": "feat(server.ts): 添加对process.env.PORT环境变量的支持",
+  "commitDescription": "\n1. 将本地端口变量名从 port 更改为更符合惯例的 PORT\n2. 更新 app.listen 逻辑，允许从 process.env.PORT 读取端口\n3. 更新服务器启动日志，使其使用新的 PORT 变量",
+  "commitFixOmitScope": "fix: 将端口变量从小写port改为大写PORT",
+  "commitFeatOmitScope": "feat: 添加对process.env.PORT环境变量的支持"
 }

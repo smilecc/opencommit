@@ -1,6 +1,6 @@
 {
   "name": "opencommit-cn",
-  "version": "3.2.10-rc1",
+  "version": "3.2.10-rc13",
   "description": "利用 AI 自动生成 Git 提交信息（简中强化）",
   "keywords": [
     "git",

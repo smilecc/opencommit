@@ -5,10 +5,10 @@ export const getOpenCommitLatestVersion = async (): Promise<
   string | undefined
 > => {
   try {
-    const { stdout } = await execa('npm', ['view', 'opencommit', 'version']);
+    const { stdout } = await execa('npm', ['view', 'opencommit-cn', 'version']);
     return stdout;
   } catch (_) {
-    outro('Error while getting the latest version of opencommit');
+    outro('Error while getting the latest version of opencommit-cn');
     return undefined;
   }
 };

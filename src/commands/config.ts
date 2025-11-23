@@ -783,9 +783,10 @@ export const configValidators = {
         'groq',
         'deepseek',
         'aimlapi',
-        'openrouter'
+        'openrouter',
+        'volcengine'
       ].includes(value) || value.startsWith('ollama'),
-      `${value} is not supported yet, use 'ollama', 'mlx', 'anthropic', 'azure', 'gemini', 'flowise', 'mistral', 'deepseek', 'aimlapi' or 'openai' (default)`
+      `${value} is not supported yet, use 'ollama', 'mlx', 'anthropic', 'azure', 'gemini', 'flowise', 'mistral', 'deepseek', 'aimlapi', 'openrouter' or 'volcengine' (default)`
     );
 
     return value;
@@ -843,7 +844,8 @@ export enum OCO_AI_PROVIDER_ENUM {
   MLX = 'mlx',
   DEEPSEEK = 'deepseek',
   AIMLAPI = 'aimlapi',
-  OPENROUTER = 'openrouter'
+  OPENROUTER = 'openrouter',
+  VOLCENGINE = 'volcengine'
 }
 
 export type ConfigType = {
