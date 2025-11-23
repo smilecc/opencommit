@@ -139,7 +139,10 @@ const INIT_MAIN_PROMPT = (
     const commitConvention = fullGitMojiSpec
       ? 'GitMoji 规范'
       : 'Conventional Commit 约定';
-    const missionStatement = `${IDENTITY} 你的任务是根据 ${commitConvention} 创建清晰且全面的提交信息，并按小点（1. 2. 等，**不得**超过5个小点，若只有1个小点则直接描述变更内容）描述变更内容：解释**做了什么**更改，以及**为什么**要进行这些更改。`;
+    const descriptionMission = config.OCO_DESCRIPTION
+      ? '并按小点（1. 2. 等，**不得**超过5个小点，若只有1个小点则直接描述变更内容）描述变更内容：'
+      : '并在一行内直接描述变更内容：';
+    const missionStatement = `${IDENTITY} 你的任务是根据 ${commitConvention} 创建清晰且全面的提交信息，${descriptionMission}解释**做了什么**更改，以及**为什么**要进行这些更改。`;
     const diffInstruction =
       "我将发送 'git diff --staged' 命令的输出给你，你需要将其转换为提交信息。";
     const conventionGuidelines = getCommitConvention(fullGitMojiSpec);

@@ -19,7 +19,7 @@ export default function () {
   } else if (aiProvider === OCO_AI_PROVIDER_ENUM.ANTHROPIC) {
     apiKey = config['OCO_ANTHROPIC_API_KEY'];
     apiUrl = config['OCO_ANTHROPIC_BASE_PATH'];
-  } else if (aiProvider === OCO_AI_PROVIDER_ENUM.OPENAI) {
+  } else if (aiProvider === OCO_AI_PROVIDER_ENUM.OPENAI || aiProvider === OCO_AI_PROVIDER_ENUM.VOLCENGINE) {
     apiKey = config['OCO_OPENAI_API_KEY'];
     apiUrl = config['OCO_OPENAI_BASE_PATH'];
   } else if (aiProvider === OCO_AI_PROVIDER_ENUM.AZURE) {
